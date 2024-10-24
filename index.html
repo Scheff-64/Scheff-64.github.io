@@ -1,14 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
+
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio</title>
+   
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="styles.css" />
 </head>
+
+
 <body>
-    <!--<img src="/Images/Earth.jpg"> -->
-    <h1>Hello World</h1>
-    <p">I'm hosted with GitHub Pages.</p>
+    <div class="wrap">
+        <header>
+            <div class="header-left">  
+                <a href="index.html">
+                    <img src="Images/Logo.png" style="width: 150px;" alt="Site Logo">
+                </a>
+
+                <div class="divider hide-mobile"></div>
+                <a href="#" class="home hide-mobile">Home</a>
+            </div>
+
+            <nav>
+                <a href="#" class="menu-open hide-desktop">
+                    <!--<img src="menu.svg" alt="menu-open"> -->
+                    
+                    <img src="Images/Bars_Solid.svg" style="width: 25px;" alt="Open menu">
+                </a>
+                <ul>
+                    <li class="hide-desktop">
+                        <a href="#" class="menu-close">
+                            <img src="Images/Circle_Xmark_Regular.svg" style="width: 25px;" alt="Close menu">
+                        </a>
+                    </li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Misc</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <!--<img src="/Images/Earth.jpg"> -->
+            <h1>Hello World</h1>
+            <p" class="subhead">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi
+                deleniti incidunt minus obcaecati consequatur totam molestias, 
+                eius maiores perspiciatis illo nulla praesentium, 
+                labore suscipit doloremque, iste repellat soluta aperiam placeat!
+            </p>
+        </main>
+
+        <div class="cat-container">
+            <div class="cat">
+                <img src="Images/Cat_Circle.png" style="width: 50%;" alt="Cat illustration">
+                
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        const menu = document.querySelector('nav ul');
+        const menuBtn = document.querySelector('.menu-open');
+        const closeBtn = document.querySelector('.menu-close');
+
+        menuBtn.addEventListener('click', () => {
+            menu.classList.add('open')
+        })
+
+        closeBtn.addEventListener('click', () => {
+            menu.classList.remove('open')
+        })
+
+    </script>
+
 </body>
 </html>
