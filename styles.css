@@ -89,10 +89,21 @@ p {
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
+        top: 20%;
     }
-
-    
 }
+
+.image__img{
+    display: block;
+    width: 100%;        
+}
+.image__img:hover{
+    cursor: pointer;
+    opacity: 0.6;
+    transition: 0.6s;
+}
+
+
 
 @media (min-width: 798px ){
     .wrap {
@@ -149,10 +160,13 @@ p {
     h1 img {
         margin: 0;
     }
-
-    main{
+    .divide-container{
         width: 50%;
     }
+    .subhead{
+        width:50%;
+    }
+    
 
     .cat{
         margin-top: 0;
@@ -189,7 +203,7 @@ p {
     }
     .column{
         float: left;
-        width: 50%;
+        width: 25%;
         padding: 5px;
     }
     .row::after{
@@ -197,5 +211,6 @@ p {
         display: table;
         clear: both;
     }
+    
     
 }
