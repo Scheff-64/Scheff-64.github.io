@@ -15,7 +15,7 @@ html{
 }
 
 body {
-    background: transparent;
+    background: rgb(50, 50, 52);
     margin: 0;
     font-family: 'Inter';
     min-height: 100%;
