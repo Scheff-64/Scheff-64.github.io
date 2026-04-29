@@ -69,9 +69,16 @@
 html{
     height: 100%;
 }
+span{
+    background:  linear-gradient(270deg,
+    #DF8908 10%,
+    #ff1d15 100%);
+    background-clip: text;
+    color: transparent;
+}
 
 body {
-    background: rgb(50, 50, 52);
+    background: rgb(0, 25, 49);
     margin: 0;
     font-family: 'Inter';
     min-height: 100%;
@@ -93,11 +100,19 @@ body {
 
 header {
     display: flex;
+    
+    top: 0;
+    left: 0;
+    padding: 1rem ;
+
+    display: flex;
     justify-content: space-between;
+    align-items: center;
+    z-index: 999;
 }
 
 nav ul {
-    background-color: dimgray;
+    background-color: rgb(4, 25, 49);
     position: fixed;
     z-index: 999;
     top: 0;
@@ -105,7 +120,7 @@ nav ul {
     height: 100vh;
     margin: 0;
     list-style: none;
-    width: 40%;
+    width: 20%;
     text-align: right;
     padding: 2em;
 
@@ -171,6 +186,11 @@ p2{
         left: 50%;
         transform: translateX(-50%);
         top: 20%;
+        border-radius: 50%;  /* makes it circular */
+        box-shadow: 0 0 40px rgba(168, 216, 234, 0.5),
+                    0 0 80px rgba(168, 216, 234, 0.3),
+                    0 0 120px rgba(168, 216, 234, 0.2);  /* cyan glow */
+        object-fit: cover;  /* ensures the image fills the circle properly */        
     }
 }
 
@@ -285,7 +305,12 @@ footer{
         right: 0;
     } 
 }
-
+.column {
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto 1.5em auto;
+    padding: 0;
+}
 @media (min-width: 1200px){
     .wrap{
         margin: 0 auto;
@@ -317,4 +342,70 @@ footer{
         clear: both;
     }
     
+}
+
+/* Mobile first - stack vertically */
+.project-item {
+    margin-bottom: 4em;
+    padding: 1.5em;
+    background: rgba(0, 20, 40, 0.5);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+}
+
+.project-item h2 {
+    color: #A8D8EA;
+    margin-bottom: 1em;
+}
+
+.project-item p {
+    color: #E8F4FF;
+    margin-bottom: 1.5em;
+}
+
+.project-image {
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.project-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(168, 216, 234, 0.3);
+}
+
+/* Desktop - alternating diagonal layout */
+@media (min-width: 950px) {
+    .project-item {
+        display: flex;
+        align-items: center;
+        gap: 3em;
+        margin-bottom: 5em;
+    }
+
+    .project-content {
+        flex: 1;
+    }
+
+    .project-image {
+        flex: 1;
+        max-width: 500px;
+    }
+
+    /* Left aligned projects */
+    .project-left {
+        flex-direction: row;
+    }
+
+    /* Right aligned projects - reverse order */
+    .project-right {
+        flex-direction: row-reverse;
+    }
+
+    .project-item h2 {
+        font-size: 2rem;
+    }
 }
