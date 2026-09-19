@@ -173,7 +173,7 @@ p2{
     color: rgb(160, 160, 160);
 }
 
-.cat {
+.profile {
     position: relative;
     height: 500px;
     width: 100%;
@@ -181,7 +181,8 @@ p2{
     margin-top: 3em;
 
     img{
-        width: 70%;
+        width: 35%;           /* size of the picture (was set inside about.html) */
+        aspect-ratio: 1 / 1;  /* square, so any photo becomes a circle */
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
@@ -190,7 +191,7 @@ p2{
         box-shadow: 0 0 40px rgba(168, 216, 234, 0.5),
                     0 0 80px rgba(168, 216, 234, 0.3),
                     0 0 120px rgba(168, 216, 234, 0.2);  /* cyan glow */
-        object-fit: cover;  /* ensures the image fills the circle properly */        
+        object-fit: cover;  /* crops the photo to fill the circle */        
     }
 }
 
@@ -291,13 +292,13 @@ footer{
     }
     
 
-    .cat{
+    .profile{
         margin-top: 0;
 
         
     }
 
-    .cat-container{
+    .profile-container{
         position: absolute;
         z-index: -1;
         width: 50%;
@@ -318,7 +319,7 @@ footer{
         max-width: 1200px;
     }
 
-    .cat{
+    .profile{
         position: relative;
         img{
             max-width: 400px;

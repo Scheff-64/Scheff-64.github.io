@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo Reel | Portfolio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="portfolio.css" />
+</head>
+
+<body class="pf-page">
+    <div class="wrap">
+        <header>
+            <div class="header-left">
+                <a href="index.html">
+                    <img src="Images/Logo.png" style="width: 150px;" alt="Site Logo">
+                </a>
+
+                <div class="divider hide-mobile"></div>
+                <a href="index.html" class="home hide-mobile">Home</a>
+            </div>
+
+            <nav>
+                <a href="#" class="menu-open hide-desktop">
+                    <img src="Images/Bars_Solid.svg" style="width: 25px;" alt="Open menu">
+                </a>
+                <ul>
+                    <li class="hide-desktop">
+                        <a href="#" class="menu-close">
+                            <img src="Images/Circle_Xmark_Regular.svg" style="width: 25px;" alt="Close menu">
+                        </a>
+                    </li>
+                    <li><a href="demo_reel.html" aria-current="page">Demo Reel</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html">Game Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="pf-main">
+
+            <!-- 1. Title -->
+            <h1 class="pf-title">Demo Reel</h1>
+            <p class="pf-lede">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi deleniti incidunt minus obcaecati.
+            </p>
+
+            <!-- 2. The reel -->
+            <div class="pf-video">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/uTBIg6XHP2g?si=_Yn_YznKlIb60_Be" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+
+            <!-- 3. Short intro -->
+            <section class="pf-section pf-overview">
+                <h2>About this reel</h2>
+                <div>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi deleniti incidunt
+                        minus obcaecati consequatur totam molestias, eius maiores perspiciatis illo nulla
+                        praesentium, labore suscipit doloremque.
+                    </p>
+                </div>
+            </section>
+
+            <!-- 4. Shot breakdown: what you did in each part of the reel -->
+            <section class="pf-section">
+                <h2>Shot breakdown</h2>
+                <div class="pf-breakdown-wrap">
+                    <table class="pf-breakdown">
+                        <thead>
+                            <tr>
+                                <th scope="col">Time</th>
+                                <th scope="col">Project</th>
+                                <th scope="col">My contribution</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>0:00</td>
+                                <td>Lorem ipsum</td>
+                                <td>Dolor sit amet, consectetur adipisicing elit.</td>
+                            </tr>
+                            <tr>
+                                <td>0:15</td>
+                                <td>Dolor sit</td>
+                                <td>Commodi deleniti incidunt minus obcaecati consequatur.</td>
+                            </tr>
+                            <tr>
+                                <td>0:32</td>
+                                <td>Amet consectetur</td>
+                                <td>Totam molestias, eius maiores perspiciatis illo nulla.</td>
+                            </tr>
+                            <tr>
+                                <td>0:50</td>
+                                <td>Adipisicing elit</td>
+                                <td>Labore suscipit doloremque, iste repellat soluta.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 5. The candle GIF, shown at its own size -->
+            <section class="pf-section pf-split pf-split--reverse">
+                <figure class="pf-figure pf-figure--natural">
+                    <img src="Images/candle.gif" alt="Animated candle" loading="lazy" decoding="async">
+                </figure>
+                <div>
+                    <h2>Lorem ipsum</h2>
+                    <p>
+                        Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit
+                        laboriosam, nisi ut aliquid ex ea commodi consequatur.
+                    </p>
+                </div>
+            </section>
+
+            <!-- 6. Links to the full project pages -->
+            <section class="pf-section">
+                <h2>Full projects</h2>
+                <p>See how each piece in the reel was made.</p>
+                <ul class="pf-projects">
+                    <li><a href="portfolio_01.html"><img src="Images/Season_SquareTN.png" alt="" loading="lazy" decoding="async"><span>Seasons</span></a></li>
+                    <li><a href="portfolio_02.html"><img src="Images/UEExporter_SquareTN.png" alt="" loading="lazy" decoding="async"><span>Blender to UE Exporter</span></a></li>
+                    <li><a href="portfolio_03.html"><img src="Images/Spray_SquareTN.png" alt="" loading="lazy" decoding="async"><span>Graffiti</span></a></li>
+                    <li><a href="portfolio_04.html"><img src="Images/ThreadMaker_SquareTN.png" alt="" loading="lazy" decoding="async"><span>Thread Maker tool</span></a></li>
+                </ul>
+            </section>
+        </main>
+    </div>
+
+
+    <script>
+        const menu = document.querySelector('nav ul');
+        const menuBtn = document.querySelector('.menu-open');
+        const closeBtn = document.querySelector('.menu-close');
+
+        menuBtn.addEventListener('click', () => {
+            menu.classList.add('open')
+        })
+
+        closeBtn.addEventListener('click', () => {
+            menu.classList.remove('open')
+        })
+    </script>
+</body>
+
+</html>

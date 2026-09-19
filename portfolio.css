@@ -1,0 +1,498 @@
+/* =========================================================
+   Portfolio project pages
+   Load AFTER styles.css:  <link rel="stylesheet" href="portfolio.css" />
+   Everything is prefixed "pf-" so it can't clash with styles.css.
+   ========================================================= */
+
+/* ---------- Page background (project pages only) ----------
+   Deep navy with a faint blue glow at the top of the page.
+   Taken from the front page's nebula palette so the pages feel related. */
+body.pf-page {
+    background-color: #0A1426;
+    background-image: radial-gradient(ellipse 80% 45% at 50% 0%,
+                      rgba(38, 76, 128, 0.35), transparent 70%);
+    background-repeat: no-repeat;
+}
+
+.pf-main,
+.pf-main *,
+.pf-pager * {
+    box-sizing: border-box;
+}
+
+.pf-main {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1.5rem 0 7rem;
+    color: #E8F4FF;
+}
+
+/* ---------- Title ---------- */
+
+.pf-main .pf-title {
+    margin: 1rem 0 0.5rem;
+    font-size: clamp(2.25rem, 6vw, 3.75rem);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    text-align: left;
+    color: aliceblue;
+}
+
+.pf-main .pf-lede {
+    max-width: 60ch;
+    margin: 0 0 2rem;
+    font-size: 1.15rem;
+    line-height: 1.6;
+    text-align: left;
+    color: #A8D8EA;
+}
+
+/* ---------- Video (responsive 16:9, scales with the page) ---------- */
+
+.pf-video {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    margin: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #000;
+    box-shadow: 0 0 0 1px rgba(168, 216, 234, 0.25),
+                0 0 40px rgba(168, 216, 234, 0.2);
+}
+
+.pf-video iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* ---------- Project facts under the video ---------- */
+
+.pf-meta {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem 2rem;
+    margin: 2rem 0 0;
+    padding: 1.5rem 0;
+    border-top: 1px solid rgba(168, 216, 234, 0.2);
+    border-bottom: 1px solid rgba(168, 216, 234, 0.2);
+}
+
+.pf-meta div { margin: 0; }
+
+.pf-meta dt {
+    margin: 0 0 0.25rem;
+    font-size: 0.85rem;
+    color: rgba(232, 244, 255, 0.6);
+}
+
+.pf-meta dd {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #E8F4FF;
+}
+
+/* ---------- Text ---------- */
+
+.pf-section {
+    margin: 5rem 0 0;
+}
+
+.pf-main h2 {
+    margin: 0 0 1rem;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    color: #A8D8EA;
+}
+
+.pf-main p {
+    max-width: 65ch;
+    margin: 0 0 1rem;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    text-align: left;
+    color: #E8F4FF;
+}
+
+/* ---------- Images ---------- */
+
+.pf-figure {
+    margin: 0;
+}
+
+.pf-figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;      /* keeps blockouts tidy; remove if your final images should keep their own shape */
+    object-fit: cover;
+    border-radius: 10px;
+    background: rgba(168, 216, 234, 0.08);
+}
+
+.pf-figure figcaption {
+    margin: 0.6rem 0 0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: rgba(232, 244, 255, 0.6);
+}
+
+/* Several videos in a row (e.g. page 4) */
+.pf-video + .pf-video {
+    margin-top: 1.5rem;
+}
+
+/* Real images that must keep their own shape and never be enlarged (e.g. a GIF) */
+.pf-main .pf-figure.pf-figure--natural img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    aspect-ratio: auto;
+    margin: 0 auto;
+}
+
+/* Text beside an image; alternates sides on desktop */
+.pf-split {
+    display: grid;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.pf-split .pf-figure img {
+    aspect-ratio: 4 / 3;
+}
+
+/* Gallery: one large feature image + smaller ones */
+.pf-gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.pf-gallery-grid .pf-figure img {
+    aspect-ratio: 4 / 3;
+    height: 100%;
+}
+
+/* ---------- Fixed Previous / Next tabs ---------- */
+
+.pf-pager a {
+    position: fixed;
+    top: 50%;
+    z-index: 50;                      /* below the mobile menu (999) */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    width: 42px;
+    padding: 1.1rem 0;
+    transform: translateY(-50%);
+    color: aliceblue;
+    text-decoration: none;
+    background: rgba(4, 25, 49, 0.85);
+    border: 1px solid rgba(168, 216, 234, 0.25);
+    transition: background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.pf-pager .pf-pager__prev {
+    left: 0;
+    border-left: 0;
+    border-radius: 0 10px 10px 0;
+}
+
+.pf-pager .pf-pager__next {
+    right: 0;
+    border-right: 0;
+    border-radius: 10px 0 0 10px;
+}
+
+.pf-pager svg {
+    flex: none;
+    width: 18px;
+    height: 18px;
+}
+
+.pf-pager__label {
+    display: block;
+    writing-mode: vertical-rl;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+}
+
+.pf-pager__prev .pf-pager__label {
+    transform: rotate(180deg);        /* reads bottom-to-top on the left side */
+}
+
+/* The name of the project you'll land on, shown on hover */
+.pf-pager__title {
+    position: absolute;
+    top: 50%;
+    padding: 0.5rem 0.85rem;
+    white-space: nowrap;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #E8F4FF;
+    background: rgba(4, 25, 49, 0.95);
+    border: 1px solid rgba(168, 216, 234, 0.3);
+    border-radius: 8px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.pf-pager__prev .pf-pager__title {
+    left: calc(100% + 10px);
+    transform: translate(-6px, -50%);
+}
+
+.pf-pager__next .pf-pager__title {
+    right: calc(100% + 10px);
+    transform: translate(6px, -50%);
+}
+
+.pf-pager a:hover,
+.pf-pager a:focus-visible {
+    color: #A8D8EA;
+    background: rgba(10, 45, 80, 0.95);
+    box-shadow: 0 0 24px rgba(168, 216, 234, 0.35);
+}
+
+.pf-pager a:focus-visible {
+    outline: 2px solid #A8D8EA;
+    outline-offset: 2px;
+}
+
+.pf-pager a:hover .pf-pager__title,
+.pf-pager a:focus-visible .pf-pager__title {
+    opacity: 1;
+    transform: translate(0, -50%);
+}
+
+/* ---------- Phones: round buttons in the bottom corners ---------- */
+
+@media (max-width: 797px) {
+    .pf-pager a {
+        top: auto;
+        bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
+        justify-content: center;
+        width: 48px;
+        height: 48px;
+        padding: 0;
+        transform: none;
+        border: 1px solid rgba(168, 216, 234, 0.35);
+        border-radius: 50%;
+    }
+
+    .pf-pager .pf-pager__prev { left: 1rem;  border: 1px solid rgba(168, 216, 234, 0.35); border-radius: 50%; }
+    .pf-pager .pf-pager__next { right: 1rem; border: 1px solid rgba(168, 216, 234, 0.35); border-radius: 50%; }
+
+    /* hide text visually, keep it for screen readers */
+    .pf-pager__label,
+    .pf-pager__title {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        overflow: hidden;
+        clip-path: inset(50%);
+        white-space: nowrap;
+        border: 0;
+    }
+}
+
+/* ---------- Tablet ---------- */
+
+@media (min-width: 600px) {
+    .pf-gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .pf-gallery-grid .pf-figure:first-child,
+    .pf-gallery-grid .pf-figure:last-child {
+        grid-column: span 2;
+    }
+
+    .pf-gallery-grid .pf-figure:first-child img,
+    .pf-gallery-grid .pf-figure:last-child img {
+        aspect-ratio: 16 / 9;
+    }
+}
+
+@media (min-width: 798px) {
+    .pf-meta {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+
+/* ---------- Desktop ---------- */
+
+@media (min-width: 950px) {
+    .pf-overview {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 3rem;
+    }
+
+    .pf-split {
+        grid-template-columns: 1.3fr 1fr;
+        gap: 3.5rem;
+    }
+
+    .pf-split--reverse {
+        grid-template-columns: 1fr 1.3fr;
+    }
+
+    .pf-split--reverse .pf-figure {
+        order: 2;
+    }
+
+    .pf-gallery-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .pf-gallery-grid .pf-figure:last-child {
+        grid-column: auto;
+    }
+
+    .pf-gallery-grid .pf-figure:last-child img {
+        aspect-ratio: 4 / 3;
+    }
+
+    /* big feature image: 2 columns x 2 rows */
+    .pf-gallery-grid .pf-figure:first-child {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+
+    .pf-gallery-grid .pf-figure:first-child img {
+        aspect-ratio: auto;
+        height: 100%;
+    }
+}
+
+/* ---------- Current page in the top nav ---------- */
+
+.pf-page header nav a[aria-current="page"] {
+    color: #A8D8EA;
+}
+
+/* ---------- Demo reel: shot breakdown table ---------- */
+
+.pf-breakdown-wrap {
+    overflow-x: auto;
+}
+
+.pf-breakdown {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.pf-breakdown th {
+    padding: 0.75rem 1.25rem 0.75rem 0;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-align: left;
+    color: rgba(232, 244, 255, 0.6);
+    border-bottom: 1px solid rgba(168, 216, 234, 0.3);
+}
+
+.pf-breakdown td {
+    padding: 0.9rem 1.25rem 0.9rem 0;
+    font-size: 1rem;
+    line-height: 1.5;
+    vertical-align: top;
+    color: #E8F4FF;
+    border-bottom: 1px solid rgba(168, 216, 234, 0.12);
+}
+
+.pf-breakdown td:first-child {
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+    color: #A8D8EA;
+}
+
+/* ---------- Demo reel: links to the full projects ---------- */
+
+.pf-projects {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.pf-projects li {
+    margin: 0;
+}
+
+.pf-projects a {
+    display: block;
+    text-decoration: none;
+    color: #E8F4FF;
+}
+
+.pf-projects img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 10px;
+    background: rgba(168, 216, 234, 0.08);
+    transition: box-shadow 0.3s ease;
+}
+
+.pf-projects span {
+    display: block;
+    margin: 0.6rem 0 0;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.pf-projects a:hover img,
+.pf-projects a:focus-visible img {
+    box-shadow: 0 0 0 1px rgba(168, 216, 234, 0.5),
+                0 0 24px rgba(168, 216, 234, 0.35);
+}
+
+.pf-projects a:hover span,
+.pf-projects a:focus-visible span {
+    color: #A8D8EA;
+}
+
+.pf-projects a:focus-visible {
+    outline: 2px solid #A8D8EA;
+    outline-offset: 4px;
+    border-radius: 10px;
+}
+
+@media (min-width: 798px) {
+    .pf-projects {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .pf-projects img,
+    .pf-projects span {
+        transition: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .pf-pager a,
+    .pf-pager__title {
+        transition: none;
+    }
+}

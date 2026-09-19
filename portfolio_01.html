@@ -1,24 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio</title>
-   
+    <title>Seasons | Portfolio</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    
+
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="portfolio.css" />
 </head>
 
-
-<body>
+<body class="pf-page">
     <div class="wrap">
         <header>
-            <div class="header-left">  
+            <div class="header-left">
                 <a href="index.html">
                     <img src="Images/Logo.png" style="width: 150px;" alt="Site Logo">
                 </a>
@@ -29,7 +28,6 @@
 
             <nav>
                 <a href="#" class="menu-open hide-desktop">
-                    
                     <img src="Images/Bars_Solid.svg" style="width: 25px;" alt="Open menu">
                 </a>
                 <ul>
@@ -37,7 +35,8 @@
                         <a href="#" class="menu-close">
                             <img src="Images/Circle_Xmark_Regular.svg" style="width: 25px;" alt="Close menu">
                         </a>
-                    </li>                   
+                    </li>
+                    <li><a href="demo_reel.html">Demo Reel</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="projects.html">Game Projects</a></li>
                     <li><a href="contact.html">Contact</a></li>
@@ -45,38 +44,142 @@
             </nav>
         </header>
 
-        <main>
-            <!--<img src="/Images/Earth.jpg"> -->
-            <h1>Seasons</h1>
-            <br>
-            <br>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/5SfH3Ab5fJ0" title="Seasons" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+        <main class="pf-main">
 
-            </iframe>
-            <br>
-            <br>
-            <br>
-            <p class="subhead">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi
-                deleniti incidunt minus obcaecati consequatur totam molestias, 
-                eius maiores perspiciatis illo nulla praesentium, 
-                labore suscipit doloremque, iste repellat soluta aperiam placeat!
+            <!-- 1. Title -->
+            <h1 class="pf-title">Seasons</h1>
+            <p class="pf-lede">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi deleniti incidunt minus obcaecati.
             </p>
-            <img src="Images/AI_Weapon_11.png" style="width: 100%;">
-            <img src="Images/AI_Weapon_11.png" style="width: 50%;">
-            <img src="Images/AI_Weapon_11.png" style="width: 100%;">
-            
-            <div class="nextContanier">
-                <a href="portfolio_04.html" class="previous">&laquo; Previous</a>
-                <a href="portfolio_02.html" class="next"> Next &raquo;</a>
-            </div>
-        </main>
 
-        
+            <!-- 2. Video: first thing people see, scales with the page -->
+            <div class="pf-video">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/5SfH3Ab5fJ0" title="Seasons" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+
+            <!-- 3. Quick facts a recruiter scans first -->
+            <dl class="pf-meta">
+                <div>
+                    <dt>Role</dt>
+                    <dd>Lorem ipsum</dd>
+                </div>
+                <div>
+                    <dt>Tools</dt>
+                    <dd>Dolor sit, amet</dd>
+                </div>
+                <div>
+                    <dt>Team size</dt>
+                    <dd>Consectetur</dd>
+                </div>
+                <div>
+                    <dt>Duration</dt>
+                    <dd>Adipisicing elit</dd>
+                </div>
+            </dl>
+
+            <!-- 4. Overview -->
+            <section class="pf-section pf-overview">
+                <h2>Overview</h2>
+                <div>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi deleniti incidunt
+                        minus obcaecati consequatur totam molestias, eius maiores perspiciatis illo nulla
+                        praesentium, labore suscipit doloremque, iste repellat soluta aperiam placeat.
+                    </p>
+                    <p>
+                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                        laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
+                        architecto beatae vitae dicta sunt explicabo.
+                    </p>
+                </div>
+            </section>
+
+            <!-- 5. Wide showcase image -->
+            <section class="pf-section">
+                <figure class="pf-figure">
+                    <img src="Images/AI_Weapon_11.png" alt="Placeholder: wide shot of the scene" loading="lazy" decoding="async">
+                    <figcaption>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</figcaption>
+                </figure>
+            </section>
+
+            <!-- 6. Image + text (image left) -->
+            <section class="pf-section pf-split">
+                <figure class="pf-figure">
+                    <img src="Images/AI_Weapon_11.png" alt="Placeholder: work in progress" loading="lazy" decoding="async">
+                </figure>
+                <div>
+                    <h2>The challenge</h2>
+                    <p>
+                        Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
+                        consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+                    </p>
+                    <p>
+                        Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,
+                        adipisci velit, sed quia non numquam eius modi tempora incidunt.
+                    </p>
+                </div>
+            </section>
+
+            <!-- 7. Image + text (image right on desktop) -->
+            <section class="pf-section pf-split pf-split--reverse">
+                <figure class="pf-figure">
+                    <img src="Images/AI_Weapon_11.png" alt="Placeholder: detail shot" loading="lazy" decoding="async">
+                </figure>
+                <div>
+                    <h2>My approach</h2>
+                    <p>
+                        Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit
+                        laboriosam, nisi ut aliquid ex ea commodi consequatur.
+                    </p>
+                    <p>
+                        Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil
+                        molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur.
+                    </p>
+                </div>
+            </section>
+
+            <!-- 8. Gallery: first image is the big feature -->
+            <section class="pf-section">
+                <h2>Gallery</h2>
+                <div class="pf-gallery-grid">
+                    <figure class="pf-figure"><img src="Images/AI_Weapon_11.png" alt="Placeholder: gallery image 1" loading="lazy" decoding="async"></figure>
+                    <figure class="pf-figure"><img src="Images/AI_Weapon_11.png" alt="Placeholder: gallery image 2" loading="lazy" decoding="async"></figure>
+                    <figure class="pf-figure"><img src="Images/AI_Weapon_11.png" alt="Placeholder: gallery image 3" loading="lazy" decoding="async"></figure>
+                    <figure class="pf-figure"><img src="Images/AI_Weapon_11.png" alt="Placeholder: gallery image 4" loading="lazy" decoding="async"></figure>
+                    <figure class="pf-figure"><img src="Images/AI_Weapon_11.png" alt="Placeholder: gallery image 5" loading="lazy" decoding="async"></figure>
+                    <figure class="pf-figure"><img src="Images/AI_Weapon_11.png" alt="Placeholder: gallery image 6" loading="lazy" decoding="async"></figure>
+                </div>
+            </section>
+
+            <!-- 9. Wrap-up -->
+            <section class="pf-section pf-overview">
+                <h2>What I learned</h2>
+                <div>
+                    <p>
+                        At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
+                        voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint
+                        occaecati cupiditate non provident.
+                    </p>
+                </div>
+            </section>
+        </main>
     </div>
 
-    <script>
+    <!-- Fixed Previous / Next. Update href + project name on each page. -->
+    <nav class="pf-pager" aria-label="Project navigation">
+        <a href="portfolio_04.html" class="pf-pager__prev" rel="prev">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+            <span class="pf-pager__label">Previous</span>
+            <span class="pf-pager__title">Thread Maker tool</span>
+        </a>
+        <a href="portfolio_02.html" class="pf-pager__next" rel="next">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+            <span class="pf-pager__label">Next</span>
+            <span class="pf-pager__title">Blender to UE Exporter</span>
+        </a>
+    </nav>
 
+    <script>
         const menu = document.querySelector('nav ul');
         const menuBtn = document.querySelector('.menu-open');
         const closeBtn = document.querySelector('.menu-close');
@@ -89,7 +192,16 @@
             menu.classList.remove('open')
         })
 
-    </script>
+        // Left / right arrow keys jump between projects
+        document.addEventListener('keydown', (e) => {
+            if (e.altKey || e.ctrlKey || e.metaKey || e.shiftKey) return;
+            const el = document.activeElement;
+            if (el && (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA' || el.isContentEditable)) return;
 
+            if (e.key === 'ArrowLeft') document.querySelector('.pf-pager__prev')?.click();
+            if (e.key === 'ArrowRight') document.querySelector('.pf-pager__next')?.click();
+        });
+    </script>
 </body>
+
 </html>
